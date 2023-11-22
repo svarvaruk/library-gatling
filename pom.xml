@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.library.gatling</groupId>
+  <artifactId>gatling-tool</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  
+	<properties>
+		<java.version>11</java.version>
+		<gatling.version>3.9.5</gatling.version>
+		<gatling.maven-plugin.version>4.3.0</gatling.maven-plugin.version>
+		<faker.version>1.0.2</faker.version>
+		<spring.version>2.7.5</spring.version>		
+	</properties>
+	<dependencies>
+		<dependency>
+		    <groupId>io.gatling</groupId>
+		    <artifactId>gatling-app</artifactId>
+		    <version>${gatling.version}</version>
+		</dependency>	
+		<dependency>
+		    <groupId>io.gatling.highcharts</groupId>
+		    <artifactId>gatling-charts-highcharts</artifactId>
+		    <version>${gatling.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>        
+	</dependencies>
+	
+	<build>
+		<plugins>	
+			<plugin>
+			    <groupId>io.gatling</groupId>
+			    <artifactId>gatling-maven-plugin</artifactId>
+			    <version>${gatling.maven-plugin.version}</version>
+			    <configuration>
+			        <simulationClass>com.library.gatling.AuthorCreationSimulation</simulationClass>
+			    </configuration>
+			</plugin>	
+		</plugins>
+	</build>
+</project>
